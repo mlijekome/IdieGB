@@ -33,4 +33,4 @@ If you would like to contribute to this project, please submit a pull request.
 
 ## Disclaimer
 
-IndeGB is provided as-is and may or may not receive continuous updates. Repo owner and/or its current, past or future contributors ARE NOT responsible for any issues or damages that may occur as a result of using this software. It's important to backup your server regurally and to be vary when using code you do not understand. Use it at your own discretion and risk.
+IndeGB is provided as-is and may or may not receive continuous updates. Repo owner and/or its current, past or future contributors ARE NOT responsible for any issues or damages that may occur as a result of using this software. It's important to backup your server regurally and to be wary when using code you do not understand. Use it at your own discretion and risk.

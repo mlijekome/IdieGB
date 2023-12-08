@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guestbook</title>
+</head>
+<body>
+    <h1>Guestbook</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/add_entry">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" maxlength="280" required>{{ request.form['message'] }}</textarea>
+        <br>
+        <input type="text" id="captcha" name="captcha" required><img src="{{ captcha_image }}" alt="CAPTCHA Image"><br>
+        <label>the CAPTCHA is case-sensitive!</label>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Entries:</h2>
+    <ul>
+        {% for entry in guestbook_data %}
+            <li>
+                <strong>{{ entry.name }}</strong>: {{ entry.message }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
